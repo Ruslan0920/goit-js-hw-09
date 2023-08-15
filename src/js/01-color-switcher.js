@@ -8,7 +8,7 @@ let timerId = null;
 function changeBodyColor() {
     timerId = setInterval(() => {
         document.body.style.backgroundColor = getRandomHexColor();
-    }, 2000);
+    }, 1000);
     clickStartButton.setAttribute("disabled", "disabled");
 }
 
