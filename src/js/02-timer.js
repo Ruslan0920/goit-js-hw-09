@@ -1,8 +1,11 @@
 import flatpickr from "flatpickr";
-// Додатковий імпорт стилів
+
 import "flatpickr/dist/flatpickr.min.css";
 
 import Notiflix from 'notiflix';
+
+flatpickr("#datetime-picker", {});
+console.log(flatpickr);
 
 const options = {
   enableTime: true,
