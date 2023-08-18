@@ -1,11 +1,12 @@
 import flatpickr from "flatpickr";
+console.log(flatpickr);
 
 import "flatpickr/dist/flatpickr.min.css";
 
 import Notiflix from 'notiflix';
 
 flatpickr("#datetime-picker", {});
-console.log(flatpickr);
+// console.log(flatpickr);
 
 const options = {
   enableTime: true,
