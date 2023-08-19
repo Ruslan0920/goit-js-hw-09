@@ -5,10 +5,10 @@ import "flatpickr/dist/flatpickr.min.css";
 
 import Notiflix from 'notiflix';
 
-flatpickr("#datetime-picker", {});
-// console.log(flatpickr);
+const inputCalendar = document.querySelector('#datetime-picker');
+console.log(inputCalendar);
 
-const options = {
+flatpickr("#datetime-picker", {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
@@ -16,7 +16,18 @@ const options = {
   onClose(selectedDates) {
     console.log(selectedDates[0]);
   },
-};
+});
+// console.log(flatpickr);
+
+// const options = {
+//   enableTime: true,
+//   time_24hr: true,
+//   defaultDate: new Date(),
+//   minuteIncrement: 1,
+//   onClose(selectedDates) {
+//     console.log(selectedDates[0]);
+//   },
+// };
 
 function convertMs(ms) {
   // Number of milliseconds per unit of time
