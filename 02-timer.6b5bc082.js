@@ -1,0 +1,2 @@
+const o=document.querySelector("#datetime-picker");console.log(o);const e=document.querySelector("button[data-start]");console.log(e);const t=document.querySelector("span[data-days]");console.log(t);const c=document.querySelector("span[data-hours]");console.log(c);const n=document.querySelector("span[data-minutes]");console.log(n);const s=document.querySelector("span[data-seconds]");console.log(s);({start(){const o=Date.now();console.log(o)}}).start();
+//# sourceMappingURL=02-timer.6b5bc082.js.map
