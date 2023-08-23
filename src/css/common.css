@@ -28,6 +28,24 @@ justify-content: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 120px;
-  
+}
+
+.value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  font-size: 20px;
+  margin: 20px;
+  background-color: blue;
+  color: white;
+}
+
+.label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  font-size: 20px;
+  margin: 20px;
 }
