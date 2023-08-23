@@ -27,6 +27,8 @@ const valueMinutes = document.querySelector('span[data-minutes]');
 console.log(valueMinutes);
 const valueSeconds = document.querySelector('span[data-seconds]');
 console.log(valueSeconds);
+// const timerClock = document.querySelector('.value');
+// console.log(timerClock);
 
 clickStartButton.addEventListener('click', () => {
 timer.start()
@@ -42,13 +44,23 @@ const timer = {
             // console.log(currentTime);
             const deltaTime = currentTime - startTime;
             // console.log(deltaTime);
-            const { days, hours, minutes, seconds } = convertMs(deltaTime);
-            console.log(`${days}:${hours}:${minutes}:${seconds}`);
-        }, 2000);
-        // clearInterval(idTime)
+            const time = convertMs(deltaTime);
+
+            updateClock(time);
+
+            // const { days, hours, minutes, seconds } = convertMs(deltaTime);
+            // console.log(`${days}:${hours}:${minutes}:${seconds}`);
+        }, 1000);
     }
 }
 
+function updateClock({ days, hours, minutes, seconds }) {
+    valueData.textContent = `${days}`;
+    valueHours.textContent = `${hours}`;
+    valueMinutes.textContent = `${minutes}`;
+    valueSeconds.textContent = `${seconds}`;
+    // console.log(valueSeconds);
+}
 
 function pad(value) {
     return String(value).padStart(2, '0')
