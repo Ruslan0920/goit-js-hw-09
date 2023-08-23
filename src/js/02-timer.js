@@ -36,13 +36,13 @@ timer.start()
 
 const timer = {
     start() {
-        const startTime = Date.now();
+        const startTime =  new Date("2023-08-28");
         console.log(startTime);
 
         setInterval(() => {
             const currentTime = Date.now();
             // console.log(currentTime);
-            const deltaTime = currentTime - startTime;
+            const deltaTime = startTime - currentTime;
             // console.log(deltaTime);
             const time = convertMs(deltaTime);
 
