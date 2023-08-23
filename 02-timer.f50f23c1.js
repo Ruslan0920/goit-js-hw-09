@@ -1,2 +1,0 @@
-!function(){var o=document.querySelector("#datetime-picker");console.log(o);var e=document.querySelector("button[data-start]");console.log(e);var t=document.querySelector("span[data-days]");console.log(t);var a=document.querySelector("span[data-hours]");console.log(a);var n=document.querySelector("span[data-minutes]");console.log(n);var c=document.querySelector("span[data-seconds]");console.log(c),r=Date.now(),console.log(r);var r}();
-//# sourceMappingURL=02-timer.f50f23c1.js.map
