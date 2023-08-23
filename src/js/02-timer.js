@@ -28,6 +28,10 @@ console.log(valueMinutes);
 const valueSeconds = document.querySelector('span[data-seconds]');
 console.log(valueSeconds);
 
+clickStartButton.addEventListener('click', () => {
+timer.start()
+})
+
 const timer = {
     start() {
         const startTime = Date.now();
@@ -44,7 +48,7 @@ const timer = {
         // clearInterval(idTime)
     }
 }
-timer.start()
+
 
 function pad(value) {
     return String(value).padStart(2, '0')
