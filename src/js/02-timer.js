@@ -1,9 +1,9 @@
-// import flatpickr from "flatpickr";
-// console.log(flatpickr);
+import flatpickr from "flatpickr";
+console.log(flatpickr);
 
-// import "flatpickr/dist/flatpickr.min.css";
+import "flatpickr/dist/flatpickr.min.css";
 
-// import Notiflix from 'notiflix';
+import Notiflix from 'notiflix';
 
 // // const options = {
 // //   enableTime: true,
@@ -90,16 +90,16 @@ function convertMs(ms) {
 // console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
 
 
-//  const selectDateInput = flatpickr("#datetime-picker", {
-//   enableTime: true,
-//   time_24hr: true,
-//   defaultDate: new Date(),
-//   minuteIncrement: 1,
-//   onClose(selectedDates) {
-//     console.log(selectedDates[0]);
-//   },
-// });
-// console.log(selectDateInput.toString);
+ const selectDateInput = flatpickr("#datetime-picker", {
+  enableTime: true,
+  time_24hr: true,
+  defaultDate: new Date(),
+  minuteIncrement: 1,
+  onClose(selectedDates) {
+    console.log(selectedDates[0]);
+  },
+});
+// console.log(selectDateInput);
 
 // const timer = (targetDate) => {
 //     setInterval(() => {
