@@ -36,9 +36,9 @@ timer.start()
 
 const timer = {
     start() {
-        const startTime =  new Date("2023-08-28");
+        const startTime =  selectDateInput.selectedDates[0];
         console.log(startTime);
-
+    
         setInterval(() => {
             const currentTime = Date.now();
             // console.log(currentTime);
@@ -46,8 +46,11 @@ const timer = {
             // console.log(deltaTime);
             const time = convertMs(deltaTime);
 
-            updateClock(time);
-
+          updateClock(time);
+          
+  if (startTime <= currentTime) {
+      window.alert("Please choose a date in the future");
+}
         }, 1000);
     }
 }
@@ -97,7 +100,7 @@ function convertMs(ms) {
     console.log(selectedDates[0]);
   },
 });
-console.log(selectDateInput.getDate());
+console.log(selectDateInput.selectedDates[0]);
 
 // const timer = (targetDate) => {
 //     setInterval(() => {
