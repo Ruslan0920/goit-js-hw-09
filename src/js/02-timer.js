@@ -48,8 +48,6 @@ const timer = {
 
             updateClock(time);
 
-            // const { days, hours, minutes, seconds } = convertMs(deltaTime);
-            // console.log(`${days}:${hours}:${minutes}:${seconds}`);
         }, 1000);
     }
 }
@@ -90,7 +88,7 @@ function convertMs(ms) {
 // console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
 
 
- const selectDateInput = flatpickr("#datetime-picker", {
+ const selectDateInput = flatpickr(inputCalendar, {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
@@ -99,7 +97,7 @@ function convertMs(ms) {
     console.log(selectedDates[0]);
   },
 });
-// console.log(selectDateInput);
+console.log(selectDateInput.getDate());
 
 // const timer = (targetDate) => {
 //     setInterval(() => {
