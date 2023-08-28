@@ -48,8 +48,9 @@ const timer = {
 
           updateClock(time);
           
-  if (startTime <= currentTime) {
-      window.alert("Please choose a date in the future");
+            if (startTime <= currentTime) {
+      Notiflix.Notify.warning("Please choose a date in the future");
+    //   window.alert("Please choose a date in the future");
 }
         }, 1000);
     }
