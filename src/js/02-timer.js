@@ -47,11 +47,16 @@ const timer = {
             const time = convertMs(deltaTime);
 
           updateClock(time);
-          
-            if (startTime <= currentTime) {
+          clickStartButton.setAttribute("disabled", "disabled");
+          if (startTime <= currentTime) {
+              
       Notiflix.Notify.warning("Please choose a date in the future");
     //   window.alert("Please choose a date in the future");
-}
+          }
+          else {
+            clickStartButton. removeAttribute("disabled", "disabled");
+          }
+          
         }, 1000);
     }
 }
@@ -102,21 +107,3 @@ function convertMs(ms) {
   },
 });
 console.log(selectDateInput.selectedDates[0]);
-
-// const timer = (targetDate) => {
-//     setInterval(() => {
-//         renderTimer(new Date(targetDate).getTime())
-//     }, 1000)
-// };
-// console.log(timer);
-
-// const renderTimer = (string) => {
-//     inputCalendar.innerText = string;
-// // console.log(renderTimer);
-// }
-
-// timer(new Date('2023/08/24'));
-// console.log(timer);
-
-// const delta = new Date();
-// console.log(delta);
