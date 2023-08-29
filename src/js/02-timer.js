@@ -1,7 +1,7 @@
-import flatpickr from "flatpickr";
+import flatpickr from 'flatpickr';
 console.log(flatpickr);
 
-import "flatpickr/dist/flatpickr.min.css";
+import 'flatpickr/dist/flatpickr.min.css';
 
 import Notiflix from 'notiflix';
 
@@ -31,46 +31,40 @@ console.log(valueSeconds);
 // console.log(timerClock);
 
 clickStartButton.addEventListener('click', () => {
-timer.start()
-})
+  timer.start();
+});
+
+clickStartButton.setAttribute('disabled', 'disabled');
+
+const currentTime = Date.now();
 
 const timer = {
-    start() {
-        const startTime =  selectDateInput.selectedDates[0];
-        console.log(startTime);
-    
-        setInterval(() => {
-            const currentTime = Date.now();
-            // console.log(currentTime);
-            const deltaTime = startTime - currentTime;
-            // console.log(deltaTime);
-            const time = convertMs(deltaTime);
+  start() {
+    const startTime = selectDateInput.selectedDates[0];
+    // console.log(startTime);
 
-          updateClock(time);
-          clickStartButton.setAttribute("disabled", "disabled");
-          if (startTime <= currentTime) {
-              
-      Notiflix.Notify.warning("Please choose a date in the future");
-    //   window.alert("Please choose a date in the future");
-          }
-          else {
-            clickStartButton. removeAttribute("disabled", "disabled");
-          }
-          
-        }, 1000);
-    }
-}
+    setInterval(() => {
+      const currentTime = Date.now();
+      // console.log(currentTime);
+      const deltaTime = startTime - currentTime;
+      // console.log(deltaTime);
+      const time = convertMs(deltaTime);
+
+      updateClock(time);
+    }, 1000);
+  },
+};
 
 function updateClock({ days, hours, minutes, seconds }) {
-    valueData.textContent = `${days}`;
-    valueHours.textContent = `${hours}`;
-    valueMinutes.textContent = `${minutes}`;
-    valueSeconds.textContent = `${seconds}`;
-    // console.log(valueSeconds);
+  valueData.textContent = `${days}`;
+  valueHours.textContent = `${hours}`;
+  valueMinutes.textContent = `${minutes}`;
+  valueSeconds.textContent = `${seconds}`;
+  // console.log(valueSeconds);
 }
 
 function pad(value) {
-    return String(value).padStart(2, '0')
+  return String(value).padStart(2, '0');
 }
 
 function convertMs(ms) {
@@ -96,14 +90,19 @@ function convertMs(ms) {
 // console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
 // console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
 
-
- const selectDateInput = flatpickr(inputCalendar, {
+const selectDateInput = flatpickr(inputCalendar, {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
     console.log(selectedDates[0]);
+    if (selectedDates[0] <= currentTime) {
+      Notiflix.Notify.failure('Please choose a date in the future');
+      // window.alert("Please choose a date in the future");
+    } else {
+      clickStartButton.removeAttribute('disabled', 'disabled');
+    }
   },
 });
 console.log(selectDateInput.selectedDates[0]);
