@@ -33,17 +33,20 @@ const timer = {
   start() {
     const startTime = selectDateInput.selectedDates[0];
 
-const timerId = setInterval(() => {
+    const timerId = setInterval(() => {
       const currentTime = Date.now();
       // console.log(currentTime);
       const deltaTime = startTime - currentTime;
-      // console.log(deltaTime);
+      console.log(deltaTime);
       const time = convertMs(deltaTime);
       // console.log(time);
 
       updateClock(time);
-}, 1000);
-    // clearInterval(timerId);
+          if (deltaTime < 1000) {
+            clearInterval(timerId);
+          } 
+    }, 1000);
+
   },
 };
 
@@ -59,7 +62,6 @@ const selectDateInput = flatpickr(inputCalendar, {
     } else {
       clickStartButton.removeAttribute('disabled', 'disabled');
     }
-    
   },
 });
 console.log(selectDateInput.selectedDates[0]);
