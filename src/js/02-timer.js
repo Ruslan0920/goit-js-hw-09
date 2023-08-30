@@ -37,7 +37,7 @@ const timer = {
       const currentTime = Date.now();
       // console.log(currentTime);
       const deltaTime = startTime - currentTime;
-      console.log(deltaTime);
+      // console.log(deltaTime);
       const time = convertMs(deltaTime);
       // console.log(time);
 
@@ -56,7 +56,7 @@ const selectDateInput = flatpickr(inputCalendar, {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    console.log(selectedDates[0]);
+    // console.log(selectedDates[0]);
     if (selectedDates[0] <= currentTime) {
       Notiflix.Notify.failure('Please choose a date in the future');
     } else {
@@ -64,7 +64,7 @@ const selectDateInput = flatpickr(inputCalendar, {
     }
   },
 });
-console.log(selectDateInput.selectedDates[0]);
+// console.log(selectDateInput.selectedDates[0]);
 
 function updateClock({ days, hours, minutes, seconds }) {
   valueData.textContent = `${days}`;
@@ -74,7 +74,7 @@ function updateClock({ days, hours, minutes, seconds }) {
   // console.log(valueSeconds);
 }
 
-function pad(value) {
+function addLeadingZero(value) {
   return String(value).padStart(2, '0');
 }
 
@@ -86,13 +86,15 @@ function convertMs(ms) {
   const day = hour * 24;
 
   // Remaining days
-  const days = pad(Math.floor(ms / day));
+  const days = addLeadingZero(Math.floor(ms / day));
   // Remaining hours
-  const hours = pad(Math.floor((ms % day) / hour));
+  const hours = addLeadingZero(Math.floor((ms % day) / hour));
   // Remaining minutes
-  const minutes = pad(Math.floor(((ms % day) % hour) / minute));
+  const minutes = addLeadingZero(Math.floor(((ms % day) % hour) / minute));
   // Remaining seconds
-  const seconds = pad(Math.floor((((ms % day) % hour) % minute) / second));
+  const seconds = addLeadingZero(
+    Math.floor((((ms % day) % hour) % minute) / second)
+  );
 
   return { days, hours, minutes, seconds };
 }
