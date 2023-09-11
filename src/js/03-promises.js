@@ -20,18 +20,18 @@ function createPromise(position, delay) {
     
     if (shouldResolve) {
       // Fulfill
-      resolve(Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`));
+      resolve(Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay} ms`));
     } else {
       // Reject
       reject(
-        Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`)
+        Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay} ms`)
       );
     }
   });
   return promise;
 }
 
-createPromise(position, delay)
+createPromise(3, 1500)
   .then(({ position, delay }) => {
     Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
   })
