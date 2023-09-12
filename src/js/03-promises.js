@@ -16,18 +16,15 @@ console.log(form);
 
 form.addEventListener("submit", onSubmitForm);
 
-  // inputAmount.value = position;
-  // inputStep.value = delay;
-
 function onSubmitForm(event) {
   
   event.preventDefault();
   const { delay, step, amount } = event.currentTarget.elements;
   console.log(event.currentTarget.elements);
 
-  const idInterval = setInterval(() => {
-    for (let i = 0; i < amount.value; i++){
-    // console.log(i);
+  
+    for (let i = 0; i < amount.value; i+=1){
+    console.log(i);
     let position = i + 1;
     const delays = Number(delay.value) + step.value * i;
        
@@ -39,11 +36,6 @@ createPromise(position, delays)
     Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
   });
   }
-}, delay)
-//       if (amount) {
-//     clearInterval(idInterval);
-// }
-
 }
 
 
@@ -52,7 +44,7 @@ function createPromise(position, delay) {
   // inputStep.value = delay;
   return new Promise((resolve, reject) => {
     const shouldResolve = Math.random() > 0.3;
-
+setTimeout(() => {
     if (shouldResolve) {
       // Fulfill
       resolve({ position, delay });
@@ -60,7 +52,7 @@ function createPromise(position, delay) {
       // Reject
       reject({ position, delay });
     }
-
+}, delay);
   });
 
 }
