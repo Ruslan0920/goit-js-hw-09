@@ -17,7 +17,7 @@ function submitForm(event) {
       // console.log(delay.value);
       // console.log(step.value);
       const delays = Number(delay.value) + step.value * i;
-      console.log(delays);
+      // console.log(delays);
 
        
 createPromise(position, delays)
