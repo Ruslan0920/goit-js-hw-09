@@ -19,19 +19,20 @@ img {
 
 input {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
+  height: 40px;
   font-size: 20px;
-  /* margin: 20px; */
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 button {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
+  height: 40px;
   font-size: 20px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .timer {
@@ -45,7 +46,7 @@ button {
   justify-content: center;
   align-items: center;
   height: 30px;
-  font-size: 20px;
+  font-size: 25px;
   margin: 20px;
   background-color: blue;
   color: white;
@@ -56,6 +57,6 @@ button {
   justify-content: center;
   align-items: center;
   height: 10px;
-  font-size: 20px;
+  font-size: 25px;
   margin: 20px;
 }
