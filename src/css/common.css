@@ -23,16 +23,12 @@ input {
   font-size: 20px;
   margin-top: 30px;
   margin-bottom: 20px;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 button {
   display: flex;
   height: 40px;
   font-size: 20px;
-  margin-right: auto;
-  margin-left: auto;
   margin-bottom: 20px;
 }
 
