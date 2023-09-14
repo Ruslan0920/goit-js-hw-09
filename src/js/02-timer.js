@@ -42,11 +42,12 @@ const timer = {
       // console.log(time);
 
       updateClock(time);
+
           if (deltaTime < 1000) {
             clearInterval(timerId);
           } 
     }, 1000);
-
+clickStartButton.setAttribute('disabled', 'disabled')
   },
 };
 
